@@ -2,6 +2,8 @@
 
 This is a simple playground to visualize the effect of different kernels on an image. The kernels are applied to the image using convolution. The playground is writte in typescript and uses the canvas API to draw the images.
 
+<img width="1912" alt="image" src="https://github.com/leonmeka/kernel-conv/assets/15350962/83d0eeaf-5d39-4061-b3a5-c077d0b3aee4">
+
 ## Theory
 
 An image kernel is a small matrix used to apply effects like the ones you might find in Photoshop or Gimp, such as blurring, sharpening, outlining or embossing. They're also used in machine learning for 'feature extraction', a technique for determining the most important portions of an image. In this context the process is referred to more generally as "convolution" (see: convolutional neural networks.)
@@ -30,6 +32,9 @@ Here are a few examples of kernels and their effect on an image:
 
 ### "Do nothing" kernel
 
+![nothing](https://github.com/leonmeka/kernel-conv/assets/15350962/f550484d-0d90-45dc-91f5-ceafa6aed138)
+
+
 A 3x3 matrix with the center value being 1 and all other values being 0. When applied to an image, it has no effect on the image.
 
 ```
@@ -41,6 +46,9 @@ A 3x3 matrix with the center value being 1 and all other values being 0. When ap
 ```
 
 ### Gaussian blur kernel
+
+![gaussian](https://github.com/leonmeka/kernel-conv/assets/15350962/b2ca21cb-b096-4634-b69e-91d10a74d13d)
+
 
 The Gaussian blur kernel is used to blur an image. It smooths out the image by averaging the pixel values in the neighborhood of each pixel.
 
@@ -54,6 +62,8 @@ The Gaussian blur kernel is used to blur an image. It smooths out the image by a
 
 ### Edge detection kernel (Sobel)
 
+![sobel](https://github.com/leonmeka/kernel-conv/assets/15350962/d1749625-07ee-4994-bf26-456950358b99)
+
 The Sobel kernel is used for edge detection. It highlights the edges in an image by computing the gradient of the image intensity at each pixel.
 
 ```
@@ -65,6 +75,8 @@ The Sobel kernel is used for edge detection. It highlights the edges in an image
 ```
 
 ### Sharpen kernel (Laplacian)
+
+![laplacian](https://github.com/leonmeka/kernel-conv/assets/15350962/c7f7c317-4b22-47f9-8ba0-abe1e7cc2557)
 
 The sharpen kernel is used to sharpen an image. It enhances the edges in an image by subtracting the blurred version of the image from the original image.
 
