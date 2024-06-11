@@ -6,11 +6,19 @@ This is a simple playground to visualize the effect of different kernels on an i
 
 ## Theory
 
-An image kernel is a small matrix used to apply effects like the ones you might find in Photoshop or Gimp, such as blurring, sharpening, outlining or embossing. They're also used in machine learning for 'feature extraction', a technique for determining the most important portions of an image. In this context the process is referred to more generally as "convolution" (see: convolutional neural networks.)
+Image kernels are fundamental tools in image processing, serving various purposes such as blurring, sharpening, edge detection, and feature extraction. These kernels, typically small matrices, are applied to images through a process called convolution.
 
-The kernel is applied to each pixel in the image, resulting in a new image that highlights or emphasizes the features captured by the kernel. The kernel is a small matrix that is applied to the image using convolution.
+### Kernel Convolution
+Convolution involves sliding the kernel over the image, performing a mathematical operation at each position. This operation consists of multiplying the kernel values with the corresponding pixel values in the neighborhood of the current pixel and summing the results. This process is repeated for each pixel, generating a new image that reflects the features emphasized by the kernel.
 
-The convolution operation involves sliding the kernel over the image, multiplying the kernel values with the pixel values in the neighborhood of the current pixel, and summing the results to get the new pixel value. This process is repeated for each pixel in the image, resulting in a new image that highlights or emphasizes the features captured by the kernel.
+### Understanding Kernel Matrices
+Kernels are represented by small matrices, typically square, with odd dimensions (e.g., 3x3, 5x5). Each value in the matrix dictates the weight or influence of the corresponding pixel in the convolution operation.
+
+## Applications
+
+1. Image Processing: Kernels are extensively used in traditional image editing software like Photoshop or Gimp to apply effects like blurring, sharpening, outlining, and embossing.
+
+2. Feature Extraction: In machine learning, kernels play a crucial role in convolutional neural networks (CNNs) for feature extraction. They help in identifying essential patterns and structures within images, enabling tasks like object recognition and image classification.
 
 ## Setup
 
@@ -66,11 +74,22 @@ The Gaussian blur kernel is used to blur an image. It smooths out the image by a
 
 The Sobel kernel is used for edge detection. It highlights the edges in an image by computing the gradient of the image intensity at each pixel.
 
+This portion of the Sobel kernel highlights horizontal edges. It detects changes in intensity from left to right or vice versa, effectively tracing horizontal edges within the image.
+
 ```
 [
   [-1, 0, 1],
   [-2, 0, 2],
   [-1, 0, 1]
+]
+```
+
+In contrast, this segment of the Sobel kernel targets vertical edges. It identifies variations in intensity from top to bottom or bottom to top, effectively capturing vertical edges present in the image.
+```
+[
+  [-1, -2, -1],
+  [0, 0, 0],
+  [1, 2, 1]
 ]
 ```
 
