@@ -31,8 +31,7 @@ Kernels are represented by small matrices, typically square, with odd dimensions
 
 1. Upload an image
 2. Define a kernel
-3. Click on the "Apply Kernel" button
-4. The result of the convolution will be displayed
+3. The result of the convolution will be displayed
 
 ## Examples
 
